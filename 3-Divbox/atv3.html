@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box 3</title>
+    <style>
+        .bloco {
+            width: 150px;
+            height: 150px;
+            margin: 4px;
+            border: 2px solid #5a5a5a;
+            display: inline-block;
+            box-sizing: border-box;
+        }
+
+        .bloco.amarelo {
+            background-color: #ffff6b;
+        }
+
+        .bloco.verde {
+            background-color: #adfbad;
+        }
+
+        .bloco.salmao {
+            background-color: #ffc1a9;
+        }
+
+        .bloco.branco {
+            background-color: white;
+        }
+
+        .bloco.circulo {
+            border-radius: 50%;
+        }
+
+        .bloco.borda.verde {
+            border: 20px solid #72bb72;
+            background-color: white;
+        }
+
+        .bloco.sumido {
+            background-color: white;
+            border: 1px solid white;
+            /*Alternativamente se pudesse usaria a TAG Vissibility:hidden*/
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="bloco circulo amarelo"></div>
+        <div class="bloco borda verde"></div>
+        <div class="bloco verde"></div>
+        <div class="bloco branco"></div>
+        <div class="bloco sumido"></div>
+    </div>
+    <div>
+        <div class="bloco amarelo"></div>
+        <div class="bloco circulo verde"></div>
+        <div class="bloco borda verde"></div>
+        <div class="bloco sumido"></div>
+        <div class="bloco salmao"></div>
+    </div>
+    <div>
+        <div class="bloco verde"></div>
+        <div class="bloco branco"></div>
+        <div class="bloco circulo branco"></div>
+        <div class="bloco borda verde"></div>
+        <div class="bloco sumido"></div>
+    </div>
+</body>
+</html>
