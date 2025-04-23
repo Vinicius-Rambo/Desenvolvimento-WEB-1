@@ -1,0 +1,90 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fundo */
+body {
+  font-family: "Ubuntu Sans"; 
+  background-color: #cccccc; /* Cor do fundo */
+  padding-top: 5px;
+  padding-left: 500px;
+  padding-right: 500px;
+  padding-bottom: 20px;
+}
+
+.fundo {
+  max-width: 1000px;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+/* Cabeçalho */
+#header {
+  background-color: #9af6b1; /* Verde claro */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#header h1 {
+  color: black;
+  padding-top: 20px;
+}
+
+/* Menu */
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #396457; /* Verde escuro */
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+/* Textos */
+h1 {
+  padding-top: 30px;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  color: #037253; /* Verde escuro */
+}
+
+h2, h3 {
+  color: #4e4f51; /* Cinza escuro */
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 40px;
+}
+
+#content p {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 30px;
+  text-indent: 1.7em;
+  text-align: justify;
+}
+
+ul {
+  list-style: disc inside;
+  margin-bottom: 20px;
+  padding-left: 50px;
+}
+
+/* Imagem do mapa */
+img.mapa {
+  padding-top: 0px;
+  max-width: 100%;
+  height: auto;
+  margin: 30px auto;
+  border-radius: 8px;
+  width: 50%; /* Ajustado para largura */
+}
