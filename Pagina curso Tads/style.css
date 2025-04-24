@@ -5,34 +5,29 @@
   box-sizing: border-box;
 }
 
-/* Fundo */
-body {
-  font-family: "Ubuntu Sans"; 
-  background-color: #cccccc; /* Cor do fundo */
-  padding-top: 5px;
-  padding-left: 500px;
-  padding-right: 500px;
-  padding-bottom: 20px;
-}
+body { font-family: "Ubuntu Sans"; }
 
-.fundo {
-  max-width: 1000px;
+.borda {
+  max-width: 1250px;/*Tamanho da parte com conteudo.*/
   margin: auto;
   background-color: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-}
-
+  padding: 25px;
+  border: solid 50px #cccccc; /*Bordas dos lados*/
+  border-top: solid 10px #cccccc;
+  border-bottom: solid 35px #cccccc;}
+  
 /* Cabeçalho */
 #header {
   background-color: #9af6b1; /* Verde claro */
   text-align: center;
   margin-bottom: 20px;
+  margin-top: 0px;
 }
 
 #header h1 {
   color: black;
-  padding-top: 20px;
+  padding-top: 25px;
+  padding-bottom:10px ;
 }
 
 /* Menu */
@@ -41,24 +36,26 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
+  padding-bottom: 25px;
+  
 }
 
 .menu a {
   text-decoration: none;
-  color: #396457; /* Verde escuro */
+  color: darkcyan; /* textos com essa cor mais forte */
+  background-color: #88E89D; ;
+  padding: 2px;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 /* Textos */
 h1 {
-  padding-top: 30px;
-  margin-left: 20px;
-  margin-bottom: 30px;
+  padding: 30px 20px 30px 0px;
   color: #037253; /* Verde escuro */
 }
 
-h2, h3 {
+h2 {
   color: #4e4f51; /* Cinza escuro */
   margin-top: 10px;
   margin-left: 20px;
@@ -69,14 +66,15 @@ h2, h3 {
   margin-left: 20px;
   margin-right: 20px;
   padding-bottom: 30px;
-  text-indent: 1.7em;
-  text-align: justify;
+  text-indent: 1.7em; /*Paragrafo nos textos*/
+
 }
 
 ul {
-  list-style: disc inside;
   margin-bottom: 20px;
   padding-left: 50px;
+  list-style: disc inside; /* Marcador circular dentro do texto */
+  
 }
 
 /* Imagem do mapa */
@@ -85,6 +83,36 @@ img.mapa {
   max-width: 100%;
   height: auto;
   margin: 30px auto;
-  border-radius: 8px;
   width: 50%; /* Ajustado para largura */
+}
+
+/*Tabelas*/
+
+
+.h3{
+  color: black;
+  font-weight: bold
+
+}
+.disciplinas {
+  display: flex;
+  gap: 35px; /*Distanciamento da tabela*/
+  margin-top: 20px;
+}
+
+.semestre ul {
+  list-style: none;
+  padding: 0;
+}
+
+.semestre li {
+  border: 2px solid #cccccccc;
+  padding: 8px 12px 8px 12px; /*Formatação da celulas*/
+  margin: 10px 0px 10px 0px; /*Distanciamento externo das celulas*/
+
+}
+
+.verde {
+  background-color: #9AF5B0;
+  border: 2px solid black
 }
