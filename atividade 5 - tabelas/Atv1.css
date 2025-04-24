@@ -1,0 +1,27 @@
+th{
+    border: 1px solid #cccccc;
+    padding:4px;
+}
+table{ 
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td{
+    padding: 4px;
+    border:1px solid gray;
+
+}
+caption{
+font-style: italic;
+font-size: small;
+
+}
+.escuro{
+    background-color: #686060;
+    color: white;
+    
+}
+.bege{
+    background-color: beige;
+}
+   
