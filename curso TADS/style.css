@@ -45,7 +45,7 @@ body { font-family: "Arial, Helvetica, sans-serif;"; }
 
 .menu a {
   text-decoration: none;
-  color: navy; /* textos com essa cor mais forte */
+  color: #3D8795; /* textos com essa cor mais forte */
   background-color: #88E89D; ;
   padding: 2px;
   font-weight: bold;
@@ -66,6 +66,7 @@ h1 {
 h2 {
   color: #4e4f51; /* Cinza escuro */
   margin: 10px 0px 40px 20px;
+  
 
 }
 
