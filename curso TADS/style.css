@@ -1,0 +1,126 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body { font-family: "Arial, Helvetica, sans-serif;"; }
+
+
+
+.borda {
+  max-width: 1250px;/*Tamanho da parte com conteudo.*/
+  margin: auto;
+  background-color: #ffffff;
+  padding: 0px 25px;
+  border: solid 50px #cccccc; /*Bordas dos lados*/
+  border-top: solid 10px #cccccc;
+  border-bottom: solid 35px #cccccc;}
+
+  
+  
+/* Cabeçalho */
+#header {
+  background-color: #9af6b1; /* Verde claro */
+  text-align: center;
+  margin: 0 -25px; /* compensa o padding da .borda */
+  padding-top: 5px /*Disntancia entre o texto TADS e a parte verde*/
+}
+
+#header h1 {
+  color: black;
+  padding-top: 25px;
+  padding-bottom:10px ;
+}
+
+/* Menu */
+.menu {
+  list-style: none;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 25px;
+  
+}
+
+.menu a {
+  text-decoration: none;
+  color: navy; /* textos com essa cor mais forte */
+  background-color: #88E89D; ;
+  padding: 2px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu li{
+  display: inline-block; /*Faz os itens ficarem lado a lado, já que o display flex tá proibido */
+}
+
+/* Textos */
+
+h1 {
+  padding: 30px 20px 30px 0px;
+  color: #037253; /* Verde escuro */
+}
+
+h2 {
+  color: #4e4f51; /* Cinza escuro */
+  margin: 10px 0px 40px 20px;
+
+}
+
+#content p {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 30px;
+  line-height: 1.4;/*Distanciamento entre os textos*/
+  text-indent: 1.7em; /*Paragrafo nos textos*/
+
+}
+
+ul {
+  margin-bottom: 20px;
+  padding-left: 50px;
+  
+}
+
+/* Imagem do mapa */
+img.mapa {
+  padding-top: 0px;
+  max-width: 100%;
+  height: auto;
+  margin: 30px auto;
+  width: 50%; /* Ajustado para largura */
+}
+
+/*Tabelas*/
+
+.h3{
+  color: black;
+  font-weight: bold;}
+
+.disciplinas {
+    margin-top: 20px;
+  }
+  
+.semestre {
+    display: inline-block;  /* Coloca os blocos lado a lado, por ambos terem essa DIV */
+    margin: 0 20px;         /* Espaço entre externo entre elas */
+  }
+  
+.semestre ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+.semestre li {
+    border: 2px solid #cccccc;
+    padding: 8px 12px; /*Top - Button / Right -left*/ /*Espaçamento Interno*/
+    margin: 10px 0px; /*Top - Button / Right -left*/  /*Espaçamento Externo*/ 
+  }
+  
+  .verde {
+    background-color: #9AF5B0;
+    border: 2px solid black;
+  }
