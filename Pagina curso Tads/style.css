@@ -22,6 +22,7 @@ body { font-family: "Ubuntu Sans"; }
   text-align: center;
   margin-bottom: 20px;
   margin-top: 0px;
+  padding: 0px;
 }
 
 #header h1 {
@@ -43,7 +44,7 @@ body { font-family: "Ubuntu Sans"; }
 .menu a {
   text-decoration: none;
   color: darkcyan; /* textos com essa cor mais forte */
-  background-color: #88E89D; ;
+  background-color: #88E89D;
   padding: 2px;
   font-weight: bold;
   transition: color 0.3s;
@@ -107,12 +108,11 @@ img.mapa {
 
 .semestre li {
   border: 2px solid #cccccccc;
-  padding: 8px 12px 8px 12px; /*Formatação da celulas*/
+  padding: 8px 5px 8px 5px; /*Formatação da celulas*/
   margin: 10px 0px 10px 0px; /*Distanciamento externo das celulas*/
 
 }
 
 .verde {
   background-color: #9AF5B0;
-  border: 2px solid black
-}
+  }
