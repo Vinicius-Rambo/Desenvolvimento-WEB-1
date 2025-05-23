@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atv6</title>
+</head>
+<body>
+</body>
+<script>
+let valor = Number(prompt("Digite o valor do automovel: "));
+let ano = Number(prompt("Digite o ano de fabricação: "));
+
+if(ano > 2022){
+    document.writeln("O valor do seguro é " + valor * 0.05);
+}
+
+else if(ano >= 2018 && ano <= 2022){
+    document.writeln("O valor do seguro é " + valor * 0.1);
+}
+else{
+    document.writeln("O valor do seguro é " + valor * 0.15);
+}
+</script>
+
+</html>
