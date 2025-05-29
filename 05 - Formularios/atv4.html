@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atv4</title>
+    <style>
+
+        h2{
+            text-align: center;
+        }
+        .container{
+            max-width: 500px;
+            margin: 0 auto;
+            background: none;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid dar;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 15px;
+            align-items: center;
+        }
+        .inline{
+            display: grid;
+            grid-template-columns: 60px 60px 1fr; /*Limita a idade e DDD para 60px e telefone para o expaço de sobra*/
+            gap: 10px
+        }
+        body{
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Jupiter_OPAL_2024.png/1024px-Jupiter_OPAL_2024.png);
+        }
+        
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cadastro usuário</h2>
+        <form>
+            <label>Nome </label>
+            <input type="text" placeholder="Nome" minlength="3" required> 
+
+            <label>Email</label>
+            <input type="email" placeholder="user@example.org" required>
+
+            <label>Nascimento</label>
+            <input type="date" placeholder="mm/dd/yyyy" required>
+
+            <label>Pais</label>
+            <select name = "País">
+                <option value="BR" selected> Brasil </option>
+                <option value="PY"> Paraguay </option>
+                <option value="ARG"> Argentina </option>
+            </select>
+
+             <label>Idade</label>
+            <div class="inline">
+                <input type="number" placeholder="Idade">
+                <input type="text" placeholder="DDD" maxlength="2">
+                <input type="tel" placeholder="Telefone">
+            </div>
+            <button> adicionar </button>
+       
+ </form>  
+ </div> 
+</body>
+</html>

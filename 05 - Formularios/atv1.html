@@ -3,13 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>atv1</title>
     <style>
 
-        
+        body{
+            color: navy;
+        }
+        form{
+            background-color: lightgreen;
+            display: grid;
+            grid-template-columns: max-content max-content;
+            border: 1px solid green;
+            text-align: center;
+            column-gap: 10px;
+            row-gap: 10px;
+            max-width: 500px;
+            padding: 25px 37px;
+
+        }
+
+        button{
+            max-width: 30%;
+            margin: 5px 0px 5px 0px;
+        }
+        label{
+            text-align: right; /*Alinhamento dos titulos a direita*/
+        }    
+        .escolaridade{
+            color: black;
+        }
+        input, select{
+            max-width: fit-content;
+        }
     </style>
 </head>
 <body>
+    <form>
+        <label>Data de nascimento</label>
+        <input type="date", placeholder="dd/mm/aaaa">
+
+        <label> Escolaridade</label>
+        <select name = "Escolaridade">
+            <option value="EF" selected> Ensino Fundamental </option>
+            <option value="EM"> Ensino Medio </option>
+            <option value="ES"> Ensino Superior </option>
+        </select>
+
+        <label> Situação da Escolaridade</label>
+        <div class="escolaridade">
+            <input type="radio" name="escolaridade">Completo
+            <input type="radio" name="escolaridade">Incompleto
+        </div>
+
+        <label>Nacionalidade</label>
+        <select name = "País">
+            <option value="BR" selected> Brasil </option>
+            <option value="PY"> Paraguay </option>
+            <option value="ARG"> Argentina </option>
+        </select>
+
+        <label>UF onde nasceu</label>
+        <select name = "estado">
+            <option value="PR" selected> Paraná </option>
+            <option value="SC"> Santa Catarina </option>
+            <option value="RS"> Rio Grande do Sul </option>
+        </select>
+        <button>Enviar</button>
+    </form>
 
     
 </body>

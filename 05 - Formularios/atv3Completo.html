@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atv3 completa</title>
+    <style>
+        form {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            max-width: 40%;
+        }
+
+        input, textarea, select {
+            margin: 0 0 10px 10px;
+        }
+
+        button {
+            max-width: fit-content; /*Só ocupa o minimo*/
+            padding: 4px;
+            margin: 0 0 10px 10px;
+        }
+
+        label {
+            text-align: right;
+        }
+
+        input[type="text"]:required:invalid,
+        input[type="password"]:required:invalid {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label>Nome </label>
+        <input type="text" placeholder="Nome" minlength="3" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="user@example.org" required>
+
+        <label>Password</label>
+        <input type="password" placeholder="6 caracteres" minlength="6" maxlength="10" required>
+
+        <label>Possui conhecimento?</label>
+        <div>
+            <input type="checkbox" name="conhecimento" value="1"> JavaScript
+            <input type="checkbox" name="conhecimento" value="2"> HTML
+            <input type="checkbox" name="conhecimento" value="3"> CSS
+        </div>
+        
+        <label>Curso</label>
+        <select name="Curso">
+            <option value="SL"> --Selecione-- </option>
+            <option value="ADS"> Análise e Desenvolvimento</option>
+            <option value="FS"> Física</option>
+            <option value="MT"> Matemática</option>
+        </select>
+
+        <label>Turno</label>
+        <div>
+            <input type="radio" name="Turno"> Tarde
+            <input type="radio" name="Turno"> Noite
+        </div>
+
+        <label>Motivo matrícula</label>
+        <textarea cols="40" rows="5" name="Motivo"></textarea> 
+        <br>
+
+        <button>enviar</button>
+    </form>
+</body>
+</html>
