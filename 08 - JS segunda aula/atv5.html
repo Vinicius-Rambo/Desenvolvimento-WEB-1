@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>atv5</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    form {
+      padding: 20px;
+      display: inline-block;
+    }
+
+    label, input, button, span {
+      display: inline-block;
+      margin: 5px;
+      
+    }
+
+    #total, #total2, #total3 {
+      background-color: #90ee90;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-weight: bold;  
+    }
+
+    .calcular{
+      background-color: #888888;  
+      border: none;
+      border-radius: 5px;
+      margin: 10px;
+      box-sizing: border-box;
+      height: 20px;
+      width: 78px;
+      color: #cdcece;
+      display: block;  
+
+    }
+    #totalFinal{
+      background-color: #87cefa;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-weight: bold; 
+
+    }
+  </style>
+</head>
+<body>
+  <h3>Orçamento</h3>
+  <form>
+  
+    <label>Item:</label>
+    <input type="text">
+
+    <label>valor:</label>
+    <input type="number" id="valor" step="0.01">
+
+    <label>quantidade:</label>
+    <input type="number" id="quantidade">
+
+    <button type="button" onclick="calcularItem()">=</button>
+    <span id="total">R$00.00</span>
+  </form>  
+
+   <form>
+  
+    <label>Item:</label>
+    <input type="text">
+
+    <label>valor:</label>
+    <input type="number" id="valor2" step="0.01">
+
+    <label>quantidade:</label>
+    <input type="number" id="quantidade2">
+
+    <button type="button" onclick="calcularItem2()">=</button>
+    <span id="total2">R$00.00</span>
+   </form>  
+
+   <form>
+  
+    <label>Item:</label>
+    <input type="text">
+
+    <label>valor:</label>
+    <input type="number" id="valor3" step="0.01">
+
+    <label>quantidade:</label>
+    <input type="number" id="quantidade3">
+
+    <button type="button" onclick="calcularItem3()">=</button>
+    <span id="total3">R$00.00</span>
+
+    <button type="button" class="calcular" onclick="calcularTotal()">calcular</button>
+
+    <span id="totalFinal">Valor total: R$ 00.00</span>
+  </form>  
+
+  <script>
+    function calcularItem(){
+      let valor = parseFloat(document.querySelector("#valor").value);
+      let quantidade = parseInt(document.querySelector("#quantidade").value);
+      let total = valor * quantidade;
+      document.querySelector("#total").innerHTML = "R$ " + total.toFixed(2);
+      return total;
+    }
+
+     function calcularItem2(){
+      let valor = parseFloat(document.querySelector("#valor2").value);
+      let quantidade = parseInt(document.querySelector("#quantidade2").value);
+      let total = valor * quantidade;
+      document.querySelector("#total2").innerHTML = "R$ " + total.toFixed(2);
+      return total;
+    }
+
+     function calcularItem3(){
+      let valor = parseFloat(document.querySelector("#valor3").value);
+      let quantidade = parseInt(document.querySelector("#quantidade3").value);
+      let total = valor * quantidade;
+      document.querySelector("#total3").innerHTML = "R$ " + total.toFixed(2);
+      return total;
+    }
+
+    function calcularTotal(){
+        let t1 = calcularItem();
+        let t2 = calcularItem2();
+        let t3 = calcularItem3();
+        let soma = t1 + t2 + t3;
+        
+        document.querySelector("#totalFinal").innerHTML = "Valor total: R$ " + soma.toFixed(2);
+    }
+
+
+
+  </script>
+</body>
+</html>
