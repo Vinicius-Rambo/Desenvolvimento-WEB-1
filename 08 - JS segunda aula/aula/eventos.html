@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+    <script>
+        function calcularDesconto(valor){
+            let desconto = valor * 0.9;  //variavel local
+            console.log(desconto);
+            document.querySelector("#desc").innerHTML="R$ " + desconto.toFixed(2); //funçao que torna o numero com duas casas decimais 
+
+            //versão aberta
+            //let p = document.querySelector('#desc');
+            //p.innerHtml = "R$" + desconto.toFixed(2);
+            
+            p.style.backgroundColor = "yellow";
+
+            return desconto;
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+
+    
+    <input placeholder="Digite o valor" type="number" onkeyup="calcularDesconto(this.value)" onchange="calcularDesconto(this.value)">
+
+   <p id="desc"> R$ 0,00 </p>
+
+    
+</body>
+</html>

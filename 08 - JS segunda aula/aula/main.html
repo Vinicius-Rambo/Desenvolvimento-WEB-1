@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let x = 100; //variavel global
+        //define a funcao
+
+        function calculardesconto(valor){
+            let novoValor = valor *0.9;  //variavel local
+            return novoValor;
+        }
+
+        function calcular(valor){
+            alert("calculando..." + valor);
+        }
+
+        //calcular(); //chama a funcao
+        //calcular(88);
+        function exibeDesconto(){
+            let desc = calculardesconto(400);
+            alert("valor  com desconto " + desc);
+            document.writeln(desc);
+    }
+
+    </script>
+</head>
+<body>
+
+    <button onclick="calcular(88)"> 2 </button>
+    <button onclick="calcular('aaa')"> 3 </button>
+    <button onclick="exibeDesconto()">10%</button>
+
+</body>
+</html>
