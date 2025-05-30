@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>atv3</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 450px 450px;
+      margin: 0 auto;
+    }
+
+    .opcoes {
+      padding-bottom: 10px;
+    }
+
+    .celula {
+      border: 1px solid gray;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    p.exercicio {
+      color: #6e6e6e;
+    }
+
+    .quadrado {
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      margin-right: 10px;
+      cursor: pointer;
+      border: 1px solid #aaa;
+    }
+
+    .vermelho { background-color: red; }
+    .azul     { background-color: blue; }
+    .amarelo  { background-color: yellow; }
+    .verde    { background-color: green; }
+    /*Feito apenas para deixar compacto*/
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="opcoes celula">
+      <h2>Opções de cores</h2>
+      <div class="quadrado vermelho" onmouseover="mudarCor(1)"></div>
+      <div class="quadrado azul" onmouseover="mudarCor(2)"></div>
+      <div class="quadrado amarelo" onmouseover="mudarCor(3)"></div>
+      <div class="quadrado verde" onmouseover="mudarCor(4)"></div>
+    </div>
+    <!--Antes eu usei emojis mas prefiri deixar com essas divs-->
+
+    <div class="celula">
+      <p class="exercicio">Exercício: faça o script no javascript que associa o evento onmouseover a cada caixa colorida. Quando onmouseover ocorre, a cor da caixa é usada para definir a cor de fundo do respectivo parágrafo ou seja, vermelho para o parágrafo 1, azul para o segundo ...</p>
+    </div>
+
+    <div class="celula">
+      <p id="boi1">1- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Velit euismod in pellentesque massa placerat duis ultricies lacus sed.</p>
+    </div>
+
+    <div class="celula">
+      <p id="boi2">2- Orci ac auctor augue mauris augue. Habitant morbi tristique senectus et netus. Viverra orci sagittis eu volutpat odio facilisis mauris sit. Lacus luctus accumsan tortor posuere ac. Curabitur vitae nunc sed velit. Amet nisl purus in mollis nunc. Arcu dui vivamus arcu felis bibendum ut.</p>
+    </div>
+
+    <div class="celula">
+      <p id="boi3">3- Sed felis eget velit aliquet sagittis id consectetur. Venenatis tellus in metus vulputate eu scelerisque felis. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Et ligula ullamcorper malesuada proin libero.</p>
+    </div>
+
+    <div class="celula">
+      <p id="boi4">4- Nibh venenatis cras sed felis eget. Diam ut venenatis tellus in metus vulputate eu scelerisque felis. Cras ornare arcu dui vivamus arcu. Dignissim diam quis enim lobortis scelerisque fermentum</p>
+    </div>    
+  </div>
+
+  <script>
+    function mudarCor(valor) {
+      for (let i = 1; i <= 4; i++) {
+        document.querySelector("#boi" + i).style.backgroundColor = "";
+      }
+
+      if (valor == 1) {
+        document.querySelector("#boi1").style.backgroundColor = "red";
+      } else if (valor == 2) {
+        document.querySelector("#boi2").style.backgroundColor = "blue";
+      } else if (valor == 3) {
+        document.querySelector("#boi3").style.backgroundColor = "yellow";
+      } else if (valor == 4) {
+        document.querySelector("#boi4").style.backgroundColor = "green";
+      }
+    }
+  </script>
+</body>
+</html>
