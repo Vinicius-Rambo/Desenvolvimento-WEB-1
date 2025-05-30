@@ -19,17 +19,16 @@
     label, input, button, span {
       display: inline-block;
       margin: 5px;
-      
     }
 
-    #total, #total2, #total3 {
+    #totalItem1, #totalItem2, #totalItem3 {
       background-color: #90ee90;
       padding: 5px 10px;
       border-radius: 4px;
       font-weight: bold;  
     }
 
-    .calcular{
+    .calcular {
       background-color: #888888;  
       border: none;
       border-radius: 5px;
@@ -39,104 +38,93 @@
       width: 78px;
       color: #cdcece;
       display: block;  
-
     }
-    #totalFinal{
+
+    #totalFinal {
       background-color: #87cefa;
       padding: 5px 10px;
       border-radius: 4px;
       font-weight: bold; 
-
     }
   </style>
 </head>
 <body>
   <h3>Orçamento</h3>
+
   <form>
-  
     <label>Item:</label>
     <input type="text">
 
-    <label>valor:</label>
-    <input type="number" id="valor" step="0.01">
+    <label>Valor:</label>
+    <input type="number" id="valorItem1" step="0.01">
 
-    <label>quantidade:</label>
-    <input type="number" id="quantidade">
+    <label>Quantidade:</label>
+    <input type="number" id="quantidadeItem1">
 
-    <button type="button" onclick="calcularItem()">=</button>
-    <span id="total">R$00.00</span>
+    <button type="button" onclick="calcularItem1()">=</button>
+    <span id="totalItem1">R$00.00</span>
   </form>  
 
-   <form>
-  
+  <form>
     <label>Item:</label>
     <input type="text">
 
-    <label>valor:</label>
-    <input type="number" id="valor2" step="0.01">
+    <label>Valor:</label>
+    <input type="number" id="valorItem2" step="0.01">
 
-    <label>quantidade:</label>
-    <input type="number" id="quantidade2">
+    <label>Quantidade:</label>
+    <input type="number" id="quantidadeItem2">
 
     <button type="button" onclick="calcularItem2()">=</button>
-    <span id="total2">R$00.00</span>
-   </form>  
+    <span id="totalItem2">R$00.00</span>
+  </form>  
 
-   <form>
-  
+  <form>
     <label>Item:</label>
     <input type="text">
 
-    <label>valor:</label>
-    <input type="number" id="valor3" step="0.01">
+    <label>Valor:</label>
+    <input type="number" id="valorItem3" step="0.01">
 
-    <label>quantidade:</label>
-    <input type="number" id="quantidade3">
+    <label>Quantidade:</label>
+    <input type="number" id="quantidadeItem3">
 
     <button type="button" onclick="calcularItem3()">=</button>
-    <span id="total3">R$00.00</span>
+    <span id="totalItem3">R$00.00</span>
 
     <button type="button" class="calcular" onclick="calcularTotal()">calcular</button>
-
     <span id="totalFinal">Valor total: R$ 00.00</span>
   </form>  
 
   <script>
-    function calcularItem(){
-      let valor = parseFloat(document.querySelector("#valor").value);
-      let quantidade = parseInt(document.querySelector("#quantidade").value);
-      let total = valor * quantidade;
-      document.querySelector("#total").innerHTML = "R$ " + total.toFixed(2);
-      return total;
+    function calcularItem1() {
+      let valorItem1 = parseFloat(document.querySelector("#valorItem1").value) || 0;
+      let quantidadeItem1 = parseInt(document.querySelector("#quantidadeItem1").value) || 0;
+      let totalItem1 = valorItem1 * quantidadeItem1;
+      document.querySelector("#totalItem1").innerHTML = "R$ " + totalItem1.toFixed(2);
+      return totalItem1;
     }
 
-     function calcularItem2(){
-      let valor = parseFloat(document.querySelector("#valor2").value);
-      let quantidade = parseInt(document.querySelector("#quantidade2").value);
-      let total = valor * quantidade;
-      document.querySelector("#total2").innerHTML = "R$ " + total.toFixed(2);
-      return total;
+    function calcularItem2() {
+      let valorItem2 = parseFloat(document.querySelector("#valorItem2").value) || 0;
+      let quantidadeItem2 = parseInt(document.querySelector("#quantidadeItem2").value) || 0;
+      let totalItem2 = valorItem2 * quantidadeItem2;
+      document.querySelector("#totalItem2").innerHTML = "R$ " + totalItem2.toFixed(2);
+      return totalItem2;
     }
 
-     function calcularItem3(){
-      let valor = parseFloat(document.querySelector("#valor3").value);
-      let quantidade = parseInt(document.querySelector("#quantidade3").value);
-      let total = valor * quantidade;
-      document.querySelector("#total3").innerHTML = "R$ " + total.toFixed(2);
-      return total;
+    function calcularItem3() {
+      let valorItem3 = parseFloat(document.querySelector("#valorItem3").value) || 0;
+      let quantidadeItem3 = parseInt(document.querySelector("#quantidadeItem3").value) || 0;
+      let totalItem3 = valorItem3 * quantidadeItem3;
+      document.querySelector("#totalItem3").innerHTML = "R$ " + totalItem3.toFixed(2);
+      return totalItem3;
     }
 
-    function calcularTotal(){
-        let t1 = calcularItem();
-        let t2 = calcularItem2();
-        let t3 = calcularItem3();
-        let soma = t1 + t2 + t3;
-        
-        document.querySelector("#totalFinal").innerHTML = "Valor total: R$ " + soma.toFixed(2);
+    function calcularTotal() {
+      let somaTotal = calcularItem1() + calcularItem2() + calcularItem3();
+      document.querySelector("#totalFinal").innerHTML = "Valor total: R$ " + somaTotal.toFixed(2);
     }
-
-
-
   </script>
 </body>
 </html>

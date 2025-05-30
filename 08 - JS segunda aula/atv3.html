@@ -42,7 +42,7 @@
     .azul     { background-color: blue; }
     .amarelo  { background-color: yellow; }
     .verde    { background-color: green; }
-    /*Feito apenas para deixar compacto*/
+    /*Feito assim apenas para deixar compacto*/
 
   </style>
 </head>
@@ -55,7 +55,7 @@
       <div class="quadrado amarelo" onmouseover="mudarCor(3)"></div>
       <div class="quadrado verde" onmouseover="mudarCor(4)"></div>
     </div>
-    <!--Antes eu usei emojis mas prefiri deixar com essas divs-->
+    <!--Antes eu usei emojis mas achei melhor deixar com essas divs-->
 
     <div class="celula">
       <p class="exercicio">Exercício: faça o script no javascript que associa o evento onmouseover a cada caixa colorida. Quando onmouseover ocorre, a cor da caixa é usada para definir a cor de fundo do respectivo parágrafo ou seja, vermelho para o parágrafo 1, azul para o segundo ...</p>
@@ -82,7 +82,7 @@
     function mudarCor(valor) {
       for (let i = 1; i <= 4; i++) {
         document.querySelector("#boi" + i).style.backgroundColor = "";
-      }
+      }//reset de todas as cores inicialmente
 
       if (valor == 1) {
         document.querySelector("#boi1").style.backgroundColor = "red";
