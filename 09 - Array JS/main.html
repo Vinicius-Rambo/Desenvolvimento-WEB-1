@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+</head>
+<body>
+    <h1>Arrays</h1>
+    <p>Arrays, Vetores, listas, .....</p>
+
+</body>
+
+<script>
+    //Alunos Matriculados em Web1 sem array
+    //let aluno1 = "Adriano";
+    //let aluno2 = "Antonio";
+
+   let alunos = ["adriano" , "antonio"];
+   console.log(typeof(alunos)); 
+   console.log(alunos);
+    //acessa o primeiro aluno, e adiciona ao corpo do texto o aluno 1.
+   console.log(alunos[0]);
+   document.writeln(alunos[1]);
+
+   //adiciona um item no array.
+
+   alunos.push("Breno");
+   document.writeln(alunos[2]);
+   
+    // a funcao pop() remove um item começando pelo ultimo.
+    alunos.pop();
+    console.log(alunos);
+    //tamanho do array 
+    console.log(alunos.length);
+
+    //Iteracao da lista | percorer a lista inteira.
+    for(let i = 0; i<alunos.length;i++){
+       document.writeln(alunos[i]);
+    }
+
+    //forEach (metodo do pessoal novo)
+    console.log("#forEach");
+    // e == alunos[i]
+    alunos.forEach(e=>document.writeln(e));
+
+    //Organiza a lista: string == alfabetica, Number == crescente.
+    alunos.sort()
+
+    //alunos.reverse() faz invertido.
+
+</script>
+</html>
