@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>atv4</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    form {
+      border: 1px solid #ccc;
+      padding: 20px;
+      display: inline-block;
+    }
+
+    label, input, button, span {
+      display: inline-block;
+      margin: 5px;
+      
+    }
+
+    #total {
+      background-color: #90ee90;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+    <h3>Orçamento</h3>
+
+    <label>Item:</label>
+    <input type="text">
+
+    <label>valor:</label>
+    <input type="number" id="valor" step="0.01">
+
+    <label>quantidade:</label>
+    <input type="number" id="quantidade">
+
+    <button type="button" onclick="calcularTotal()">=</button>
+    <span id="total">R$00.00</span>
+  </form>  
+
+  <script>
+    function calcularTotal(){
+      let valor = parseFloat(document.querySelector("#valor").value);
+      let quantidade = parseInt(document.querySelector("#quantidade").value);
+      let total = valor * quantidade;
+      document.querySelector("#total").innerHTML = "R$ " + total.toFixed(2);
+    }
+  </script>
+</body>
+</html>
