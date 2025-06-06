@@ -4,25 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>imagens</title>
+    <style>
+        .grid{
+            display: grid;
+            grid-template-columns: max-content;
+            gap: 7px;
+            width: 300px;
+            padding: 20px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }   
+        p{
+            margin: 0px;
+        }
+    </style>
 </head>
 <body>
-    
-    <button onclick="next()"> next </button>
+
+    <div class="grid">
+    <button onclick="next()"> Next </button>
+    <button onclick="preview()"> Preview</button>
     <p></p>   
     <img id="photo" src= "" width="200">
+    </div>
+
 </body>
     <script> 
         const paises = [
             "../images/china.png", 
             "../images/germany.png",
-            "/../images/india.png",
+            "../images/india.png",
+            "../images/slovakia.png",
+            "../images/sweden.png",
         ];
-        let i;
-        Image.src = paises[0]
+        let i = 0;
+        photo.src = paises[0]
 
         function next(){
-        i++;
-        photo.src = paises[i];
+            i++;
+            photo.src = paises[i];
+
+            if(i > 4){
+              photo.src = paises[0];
+              i = 0;
+            }
         }
+
+        function preview(){ 
+            if(i == 0){
+                photo.src = paises[4];
+                i = 4;
+            }
+            else {
+                i--;
+                photo.src = paises[i];
+            }
+        }
+
+
     </script>
 </html>
