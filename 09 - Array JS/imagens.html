@@ -43,24 +43,20 @@
         function next(){
             i++;
             photo.src = paises[i];
-
-            if(i > 4){
+            if(i >= paises.length){
               photo.src = paises[0];
               i = 0;
             }
         }
-
         function preview(){ 
             if(i == 0){
                 photo.src = paises[4];
                 i = 4;
             }
-            else {
-                i--;
-                photo.src = paises[i];
-            }
+                else {
+                    i--;
+                    photo.src = paises[i];
+                }
         }
-
-
     </script>
 </html>
