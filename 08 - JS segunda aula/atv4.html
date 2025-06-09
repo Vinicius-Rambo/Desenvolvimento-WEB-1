@@ -50,10 +50,10 @@
 
   <script>
     function calcularTotal(){
-      let valor = parseFloat(document.querySelector("#valor").value);
-      let quantidade = parseInt(document.querySelector("#quantidade").value);
+      let valor = parseFloat(document.querySelector("#valor").value); // Pega o valor digitado e converte para número decimal
+      let quantidade = parseInt(document.querySelector("#quantidade").value);  //converte para inteiro
       let total = valor * quantidade;
-      document.querySelector("#total").innerHTML = "R$ " + total.toFixed(2);
+      document.querySelector("#total").innerHTML = "R$ " + total.toFixed(2); //mostra o total formatado no span
     }
   </script>
 </body>

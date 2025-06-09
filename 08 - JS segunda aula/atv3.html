@@ -36,14 +36,13 @@
       margin-right: 10px;
       cursor: pointer;
       border: 1px solid #aaa;
-    }
+    }/*Regra para criar os quadrados similar atividade 3 DIV box*/
 
     .vermelho { background-color: red; }
     .azul     { background-color: blue; }
     .amarelo  { background-color: yellow; }
     .verde    { background-color: green; }
-    /*Feito assim apenas para deixar compacto*/
-
+        /*Feito assim apenas para deixar compacto as cores*/
   </style>
 </head>
 <body>
@@ -55,34 +54,34 @@
       <div class="quadrado amarelo" onmouseover="mudarCor(3)"></div>
       <div class="quadrado verde" onmouseover="mudarCor(4)"></div>
     </div>
-    <!--Antes eu usei emojis mas achei melhor deixar com essas divs-->
 
     <div class="celula">
       <p class="exercicio">Exercício: faça o script no javascript que associa o evento onmouseover a cada caixa colorida. Quando onmouseover ocorre, a cor da caixa é usada para definir a cor de fundo do respectivo parágrafo ou seja, vermelho para o parágrafo 1, azul para o segundo ...</p>
     </div>
 
-    <div class="celula">
-      <p id="boi1">1- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Velit euismod in pellentesque massa placerat duis ultricies lacus sed.</p>
+    <div class="celula" id="boi1">
+      <p>1- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Velit euismod in pellentesque massa placerat duis ultricies lacus sed.</p>
     </div>
 
-    <div class="celula">
-      <p id="boi2">2- Orci ac auctor augue mauris augue. Habitant morbi tristique senectus et netus. Viverra orci sagittis eu volutpat odio facilisis mauris sit. Lacus luctus accumsan tortor posuere ac. Curabitur vitae nunc sed velit. Amet nisl purus in mollis nunc. Arcu dui vivamus arcu felis bibendum ut.</p>
+    <div class="celula" id="boi2">
+      <p>2- Orci ac auctor augue mauris augue. Habitant morbi tristique senectus et netus. Viverra orci sagittis eu volutpat odio facilisis mauris sit. Lacus luctus accumsan tortor posuere ac. Curabitur vitae nunc sed velit. Amet nisl purus in mollis nunc. Arcu dui vivamus arcu felis bibendum ut.</p>
     </div>
 
-    <div class="celula">
-      <p id="boi3">3- Sed felis eget velit aliquet sagittis id consectetur. Venenatis tellus in metus vulputate eu scelerisque felis. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Et ligula ullamcorper malesuada proin libero.</p>
+    <div class="celula" id="boi3">
+      <p>3- Sed felis eget velit aliquet sagittis id consectetur. Venenatis tellus in metus vulputate eu scelerisque felis. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Et ligula ullamcorper malesuada proin libero.</p>
     </div>
 
-    <div class="celula">
-      <p id="boi4">4- Nibh venenatis cras sed felis eget. Diam ut venenatis tellus in metus vulputate eu scelerisque felis. Cras ornare arcu dui vivamus arcu. Dignissim diam quis enim lobortis scelerisque fermentum</p>
+    <div class="celula" id="boi4">
+      <p>4- Nibh venenatis cras sed felis eget. Diam ut venenatis tellus in metus vulputate eu scelerisque felis. Cras ornare arcu dui vivamus arcu. Dignissim diam quis enim lobortis scelerisque fermentum</p>
     </div>    
   </div>
 
   <script>
+    //Função que faz a mudança das cores
     function mudarCor(valor) {
       for (let i = 1; i <= 4; i++) {
         document.querySelector("#boi" + i).style.backgroundColor = "";
-      }//reset de todas as cores inicialmente
+      }//reset das cores em todo o documento que tiver a Tag boi.
 
       if (valor == 1) {
         document.querySelector("#boi1").style.backgroundColor = "red";
