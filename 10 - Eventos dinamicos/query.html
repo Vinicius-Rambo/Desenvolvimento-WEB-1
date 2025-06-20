@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //aguarda o HTML carregar (Build do DOM)
+        0
+        window.onload= () => {
+         //Selecionar o elemento pelo seu ID n use
+         let div = document.getElementById("mensagem");
+         div.innerText = "conteudo div B"
+
+
+
+            // - - - - Professor aprova - - - //
+         let div_b = document.querySelector("#mensagem"); // ID
+         div_b.innerText = "DIV B";
+
+         let div_c = document.querySelector(".mensagem"); // Classe  
+         div_c.innerText = "DIV C";
+
+         let div_a = document.querySelector("div"); // TAG
+         div_a.innerText = "DIV A";
+
+
+            // - - - - Adicionar um evento ao button
+         document.querySelector("button").addEventListener("click", ()=>{ 
+         //obtem a input
+        let input = document.querySelector("input");
+
+        if (input.getAttribute("type") == "password")
+        input.setAttribute("type", "text");
+
+        else 
+         input.setAttribute("type", "password");
+        })
+
+
+        // Metodo Aberto, evite usar.
+        /*
+        function alteraType(){
+        document.querySelector("input").setAttribute("type", "text") 
+        }
+        let btn = document.querySelector("button");
+        btn.addEventListener("click", alteraType);
+        */
+
+       // seleciona todas as Div
+       let array_divs = document.querySelectorAll("div");
+       array_divs.forEach( (div) => {div.style.border = "1px solid black"}) 
+    }
+
+    // 8. Adicionar dois BUTTONS (MODO DARK) e MODO (LIGHT)
+    // No modo dark -> seta o atributo da bodu para uma regra CSS 
+    // background black. color white.
+
+    </script>
+</head>
+
+<body>
+
+    <div>A</div>
+
+    <div id="mensagem"> B </div>
+
+    <div class="mensagem"> C </div>
+
+    <input type = "password" value="1234"> <button> VER </button>
+
+</body>
+</html>
