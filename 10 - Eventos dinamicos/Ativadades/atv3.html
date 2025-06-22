@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atv3</title>
+</head>
+<body>
+    <input type ="text" id="tarefa">
+    <button onclick="addTarefa()"> + </button>
+
+    <p>Lista de Tarefas:</p>
+    <ol id="listaTarefas">
+    </ol>
+</body>
+    <script>
+        function addTarefa(){
+            const input = document.getElementById("tarefa"); //atribui o valor da input para a constante input.
+            const texto = input.value.trim();//Esse .trim é uma função do JS para limpar espaços vazios das Strings
+
+            if(texto !== ""){ //texto diferente de vazio, para não adicionar uma item sem nada..
+                const lista = document.getElementById("listaTarefas");
+                lista.innerHTML += "<li>" + texto + "</li>"; // Cria uma linha no HTML com uma lista com o conteudo da input.             
+            }
+        }
+        
+    </script>
+ 
+</html>
