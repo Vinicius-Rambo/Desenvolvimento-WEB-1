@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atv1</title>
+   
+</head>
+<body>
+    <!--O disabled deixa a input desativada para o usuario.-->
+    <input type = "text" id="num1" disabled> + <input type = "text" id="num2" disabled>
+    =
+    <input type = "number" id="resposta" placeholder="?">
+    <input type = "button" value="verificar" onclick="verificarResposta()">
+
+    <div id="resultado"></div>
+
+</body>
+    <script>
+          //Gerar os dois numeros aleatorios de 0 a 10 e o valor da soma deles.
+          const num1 = Math.floor(Math.random() * 10);
+          const num2 = Math.floor(Math.random() * 10);
+          const soma = num1 + num2;
+
+           // Inseri os valores gerados nas inputs.
+           document.getElementById('num1').value = num1;
+           document.getElementById('num2').value = num2;
+
+            function verificarResposta(){
+             const resposta = document.getElementById('resposta').value; // Pega o valor digitado pelo usuário
+             const resultado = document.getElementById('resultado'); //Atribui o resultado.
+
+                if (resposta == soma){
+                    resultado.textContent = "Parabéns" 
+                }
+
+                else {
+                    resultado.textContent = "Errou! Tente novamente";
+                }
+            }
+            //Usado const pelo motivo dos valores não vão mudar após criados.
+    </script>
+</html>
