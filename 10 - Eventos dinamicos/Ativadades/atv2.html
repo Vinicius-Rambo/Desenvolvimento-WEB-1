@@ -46,28 +46,28 @@
 
         let mensagens = []; // Vetor de strings para ver se existe um erro em mais de 1.
 
-        if(nome.length < 3){
+        if(nome.length < 3){ // caso o nome for menor do que 3
             mensagens.push("Erro no campo nome");
         }
-        if(cpf.length !== 11){
+        if(cpf.length !== 11){ // caso o CPF for diferente de 11
             mensagens.push("Erro no campo cpf");
         }
-        if(email.length < 4){
+        if(email.length < 4){ // caso o email for menor que 4
             mensagens.push("Erro no campo email");
         }
         //Quando estiver alguma invalida.
          if (mensagens.length > 0) {
-         let textoFinal = "";
+         let textoFinal = ""; //gera um espaco nos arrays.
 
             for (let i = 0; i < mensagens.length; i++) {//Percore todo o vetor para ver os erros.
             textoFinal += mensagens[i];
 
                 //No ultimo valor do vetor não adiciona |
-                if (i < mensagens.length - 1) {
+                if (i < mensagens.length - 1) { // forma de que retira um I < mensagens - 1 para no ultimo nao ter barra.
                 textoFinal += " | ";
                 }
             }
-          resultado.textContent = textoFinal;
+          resultado.textContent = textoFinal; //Vincula um texto a constante Resultado.
         } 
         
         else { // caso tudo valido.
