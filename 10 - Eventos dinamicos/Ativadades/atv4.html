@@ -6,13 +6,13 @@
   <title>atv4</title>
   <style>
     body {
-      font-family: sans-serif; /*Fonte*/
+      font-family: sans-serif;
       padding: 10px;
       border: 1px solid #ccc;
     }
 
     form {
-      padding: 5px; /*Separa os items */  
+      padding: 5px;
       display: block;
     }
 
@@ -21,31 +21,31 @@
       margin: 5px;
     }
 
-    #totalItem1, #totalItem2, #totalItem3 { /*Subresultados*/
+    #totalItem1, #totalItem2, #totalItem3 {
       background-color: #90ee90;
       padding: 5px 10px;
       border-radius: 4px;
-      font-weight: bold;  
+      font-weight: bold;
     }
 
-    #totalFinal { /*Resultado final*/
-      background-color: #87cefa; 
+    #totalFinal {
+      background-color: #87cefa;
       padding: 5px 10px;
       border-radius: 4px;
-      font-weight: bold; 
+      font-weight: bold;
     }
-
   </style>
 </head>
 <body>
   <h3>Orçamento</h3>
 
-  <form> <!--Item 1-->
+  <!-- Formulário do item 1 -->
+  <form>
     <label>Item:</label>
     <input type="text">
 
     <label>Valor:</label>
-    <input type="number" id="valorItem1" step="0.01">
+    <input type="number" id="valorItem1" step="0.01"> <!-- Valor com casas decimais -->
 
     <label>Quantidade:</label>
     <input type="number" id="quantidadeItem1">
@@ -53,7 +53,8 @@
     <span id="totalItem1">R$00.00</span>
   </form>  
 
-  <form> <!--Item 2-->
+  <!-- Formulário do item 2 -->
+  <form>
     <label>Item:</label>
     <input type="text">
 
@@ -66,7 +67,8 @@
     <span id="totalItem2">R$00.00</span>
   </form>  
 
-  <form> <!--Item 3-->
+  <!-- Formulário do item 3 -->
+  <form>
     <label>Item:</label>
     <input type="text">
 
@@ -77,45 +79,77 @@
     <input type="number" id="quantidadeItem3">
 
     <span id="totalItem3">R$00.00</span>
-
   </form>  
-    <span id="totalFinal">Valor total: R$ 00.00</span>
-<script>
-  //Calcula o subtotal de 1 item (valor * quantidade) e mostra o resultado no HTML
-  function calcularSubtotal(idValor, idQuantidade, idResultado) {
-    const valor = parseFloat(document.getElementById(idValor).value); //Pega o valor digitado no campo de valor (converte pra número real)
-    const quantidade = parseInt(document.getElementById(idQuantidade).value);    //Pega a quantidade digitada (converte pra número inteiro)
-    const total = valor * quantidade; 
 
-    document.getElementById(idResultado).textContent = "R$ " + total.toFixed(2); //Mostra o total formatado com 2 casas decimais no campo correto
+  <!-- Total geral da compra -->
+  <span id="totalFinal">Valor total: R$ 00.00</span>
+
+<script>
+  // Função que calcula o subtotal de um item individual
+  function calcularSubtotal(idValor, idQuantidade, idResultado) {
+    // Pega o valor do campo de preço e converte para número decimal
+    const valor = parseFloat(document.getElementById(idValor).value);
+    
+    // Pega a quantidade e converte para número inteiro
+    const quantidade = parseInt(document.getElementById(idQuantidade).value);
+
+    // Multiplica valor por quantidade para obter o subtotal
+    const total = valor * quantidade;
+
+    // Exibe o resultado formatado no elemento correto (com R$ e 2 casas decimais)
+    document.getElementById(idResultado).textContent = "R$ " + total.toFixed(2);
+
+    // Chama a função para atualizar o valor total final da compra
     calcularTotal();
   }
 
-  
-//Função simplificada que faz os subtotais de quantidade * valor
-function calcularItem(numero) {
-  let valor = parseFloat(document.querySelector("#valorItem" + numero).value) || 0;
-  let quantidade = parseInt(document.querySelector("#quantidadeItem" + numero).value) || 0;
-  return valor * quantidade;
-}
+  // Calcula o total de cada item (evita repetir código)
+  function calcularItem(numero) {
+    // Concatena o número no final do ID para buscar os campos corretos (valorItem1, quantidadeItem1, etc.)
+    let valor = parseFloat(document.querySelector("#valorItem" + numero).value) || 0;
+    let quantidade = parseInt(document.querySelector("#quantidadeItem" + numero).value) || 0;
 
-  //Soma os totais dos 3 itens e mostra o valor final da compra
+    return valor * quantidade;
+  }
+
+  // Soma o total de todos os itens e exibe o valor final da compra
   function calcularTotal() {
     const total = calcularItem(1) + calcularItem(2) + calcularItem(3);
     document.querySelector("#totalFinal").textContent = "Valor total: R$ " + total.toFixed(2);
   }
 
-  //Sempre que o valor ou quantidade mudar, atualiza subtotal e valor total 
-  //Toda vez que alguém digitar ou alterar o valor no campo valorItem, chame a função calcularSubtotal() usando os ids dos campos envolvidos no cálculo do item 
+  // ========== EVENTOS PARA ATUALIZAR O CÁLCULO AUTOMATICAMENTE ==========
 
-  document.getElementById("valorItem1").addEventListener("input", () => calcularSubtotal("valorItem1", "quantidadeItem1", "totalItem1"));
-  document.getElementById("quantidadeItem1").addEventListener("input", () => calcularSubtotal("valorItem1", "quantidadeItem1", "totalItem1"));
+  // Quando o usuário digitar algo no campo "valorItem1", execute a função calcularSubtotal()
+  // Essa função usa os IDs dos campos para recalcular e mostrar o resultado automaticamente
+  document.getElementById("valorItem1").addEventListener("input", () => {
+    // O evento "input" detecta qualquer mudança no campo de valor (enquanto digita)
+    // A arrow function () => {...} chama a função calcularSubtotal com os 3 IDs corretos
+    calcularSubtotal("valorItem1", "quantidadeItem1", "totalItem1");
+  });
 
-  document.getElementById("valorItem2").addEventListener("input", () => calcularSubtotal("valorItem2", "quantidadeItem2", "totalItem2"));
-  document.getElementById("quantidadeItem2").addEventListener("input", () => calcularSubtotal("valorItem2", "quantidadeItem2", "totalItem2"));
+  // Quando o usuário alterar a quantidade do item 1, recalcula também
+  document.getElementById("quantidadeItem1").addEventListener("input", () => {
+    calcularSubtotal("valorItem1", "quantidadeItem1", "totalItem1");
+  });
 
-  document.getElementById("valorItem3").addEventListener("input", () => calcularSubtotal("valorItem3", "quantidadeItem3", "totalItem3"));
-  document.getElementById("quantidadeItem3").addEventListener("input", () => calcularSubtotal("valorItem3", "quantidadeItem3", "totalItem3"));
+  // Eventos para o item 2
+  document.getElementById("valorItem2").addEventListener("input", () => {
+    calcularSubtotal("valorItem2", "quantidadeItem2", "totalItem2");
+  });
+
+  document.getElementById("quantidadeItem2").addEventListener("input", () => {
+    calcularSubtotal("valorItem2", "quantidadeItem2", "totalItem2");
+  });
+
+  // Eventos para o item 3
+  document.getElementById("valorItem3").addEventListener("input", () => {
+    calcularSubtotal("valorItem3", "quantidadeItem3", "totalItem3");
+  });
+
+  document.getElementById("quantidadeItem3").addEventListener("input", () => {
+    calcularSubtotal("valorItem3", "quantidadeItem3", "totalItem3");
+  });
 </script>
 
 </body>
