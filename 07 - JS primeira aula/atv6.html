@@ -11,15 +11,15 @@
 let valor = Number(prompt("Digite o valor do automovel: "));
 let ano = Number(prompt("Digite o ano de fabricação: "));
 
-if(ano > 2022){
-    document.writeln("O valor do seguro é " + valor * 0.05);
+if(ano > 2022){ //Ano menor que 2022
+    document.writeln("O valor do seguro é " + valor * 0.05); //5%
 }
 
 else if(ano >= 2018 && ano <= 2022){
-    document.writeln("O valor do seguro é " + valor * 0.1);
+    document.writeln("O valor do seguro é " + valor * 0.1); //10%
 }
 else{
-    document.writeln("O valor do seguro é " + valor * 0.15);
+    document.writeln("O valor do seguro é " + valor * 0.15); //15%
 }
 </script>
 
