@@ -6,35 +6,50 @@
     <title>atv4</title>
     <style>
 
-        h2{
+        h2{/*Titulo da form*/
             text-align: center;
+            color: white;
         }
         .container{
-            max-width: 500px;
-            margin: 0 auto;
-            background: none;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid dar;
+            border: 1px solid #6ab7b6;
+            width: 45%; /*Tamanho do formulario*/
+            padding: 35px; /*espaço interna do formulario*/ 
+            margin: 60px auto 0 auto; /*Centraliza o formulario*/
+            background-color: rgba(106, 183, 182, 0.15); /*Cor no fundo com transparencia.*/
+        }
+        
+        body{ /*Imagem do fundo*/
+            background-image: url(terra.png); /*Adiciona o Terra PNG como fundo*/
+            background-size: cover; /*Faz cobrir a tela inteira*/
+            background-repeat: no-repeat; /*Faz a imagem na repetir*/
+            background-position: center; /*Centraliza a imagem.*/
         }
 
         form {
             display: grid;
             grid-template-columns: 100px 1fr;
-            gap: 15px;
-            align-items: center;
+            gap: 15px; /*Distancia entre as colunas da grid*/
+            align-items: center; /*Inputs igualadas*/
         }
-        .inline{
-            display: grid;
-            grid-template-columns: 60px 60px 1fr; /*Limita a idade e DDD para 60px e telefone para o expaço de sobra*/
-            gap: 10px
-        }
-        body{
-            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Jupiter_OPAL_2024.png/1024px-Jupiter_OPAL_2024.png);
-        }
-        
-        
 
+        .juntos label{
+           margin-left: 10px;
+           
+        }
+    
+        label{
+            color: #6ab7b6;
+            margin-right: 8px;
+        }
+
+        input, select{
+            border: 2px solid #0b5178; 
+        }
+
+        #DDD{ width: 50px;} /*Tamanho da input DDD*/
+        #idade{ width: 70px;} /*Tamanho da input idade*/
+        button{width: 70px;} /*Tamanho do botão*/
+    
     </style>
 </head>
 <body>
@@ -57,12 +72,16 @@
                 <option value="ARG"> Argentina </option>
             </select>
 
-             <label>Idade</label>
-            <div class="inline">
-                <input type="number" placeholder="Idade">
-                <input type="text" placeholder="DDD" maxlength="2">
-                <input type="tel" placeholder="Telefone">
+            <label>Idade</label>
+            <div class="Juntos">
+                <input type="number" placeholder="Idade"  id="idade">
+                <label>DDD</label>
+                <input type="text" placeholder="DDD" maxlength="2" id="DDD">
+                <label>Telefone</label>
+                <input type="tel" placeholder="Telefone" >
             </div>
+
+            <div></div><!--Serve para o button ficar na segunda coluna da grid.-->
             <button> adicionar </button>
        
  </form>  

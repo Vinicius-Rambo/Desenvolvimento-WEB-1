@@ -6,35 +6,39 @@
     <title>atv1</title>
     <style>
 
-        body{
+        body{ /*Cor das labels*/
             color: navy;
         }
         form{
-            background-color: lightgreen;
+            background-color: lightgreen /*Fundo verde*/;
             display: grid;
             grid-template-columns: max-content max-content;
-            border: 1px solid green;
-            text-align: center;
-            column-gap: 10px;
-            row-gap: 10px;
-            max-width: 500px;
-            padding: 25px 37px;
-
+            border: 1px solid green; /*Borda do formulario*/
+            text-align: center; 
+            column-gap: 10px; /*Espaço entre as colunas da grid*/
+            row-gap: 10px; /*Espaço entre as linhas da grid*/
+            max-width: 500px; /*Tamanho maximo do formulario*/
+            padding: 25px 37px; /*Espaço interno.*/
+            
+        }
+        
+        input, select{
+            max-width: fit-content; /*Ocupa o minimo necessario*/
         }
 
         button{
-            max-width: 30%;
+            max-width: 30%; 
             margin: 5px 0px 5px 0px;
         }
+
         label{
             text-align: right; /*Alinhamento dos titulos a direita*/
-        }    
+        }
+
         .escolaridade{
-            color: black;
+            color: black; 
         }
-        input, select{
-            max-width: fit-content;
-        }
+        
     </style>
 </head>
 <body>
