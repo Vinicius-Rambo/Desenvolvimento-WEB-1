@@ -8,8 +8,8 @@
         .grid{
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
-            width: 300px;
+            gap: 20px; /*Distanciamento de 20 px nas colunas*/
+            width: 300px; /*Tamanho da grid*/
             padding: 20px;
             margin: 0 auto;
         }
@@ -19,13 +19,13 @@
             font-size: 20px;
         }
         /*Utilizando Pseudoelemento adiciona um emoji*/
-        button:nth-child(4n - 2)::before{
+        button:nth-child(4n - 2)::before{ /*3 botão */
             content: '🟢';
         }
-        button:first-child::before{
+        button:first-child::before{ /*Primeiro Botão*/
             content: '🔵';
         }
-        button:nth-child(3n)::before{
+        button:nth-child(3n)::before{ /*Terceiro Botão*/
             content: '🔴';
         }
     </style>
@@ -39,8 +39,9 @@
     </div>
 </body>
     <script>
-        function mudarCor(valor){
-            document.body.style.backgroundColor = valor;
+        function mudarCor(valor){ //Função com de mudar cor com parametro Valor,
+            document.body.style.backgroundColor = valor; 
+         // No documento, dentro da body no estilo define a cor do fundo como variavel.
         }
 
         //Fiz esse com uma aparencia por gostar do trabalho
