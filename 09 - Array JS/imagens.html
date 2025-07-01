@@ -22,7 +22,7 @@
 <body>
 
     <div class="grid">
-    <button onclick="next()"> Next </button>
+    <button onclick="next()"> Next </button> 
     <button onclick="preview()"> Preview</button>
     <p></p>   
     <img id="photo" src= "" width="200">
@@ -30,31 +30,31 @@
 
 </body>
     <script> 
-        const paises = [
-            "../images/china.png", 
-            "../images/germany.png",
-            "../images/india.png",
-            "../images/slovakia.png",
-            "../images/sweden.png",
+        const paises = [ //Vetor de imagens das bandeiras.
+            "/images/china.png", 
+            "/images/germany.png",
+            "/images/india.png",
+            "/images/slovakia.png",
+            "/images/sweden.png",
         ];
-        let i = 0;
-        photo.src = paises[0]
+        let i = 0; //Contador inicializado no 0
+        photo.src = paises[0] // ID photo o atributo src é adicionado como o primeiro item do vetor. 
 
         function next(){
-            i++;
+            i++; 
             photo.src = paises[i];
-            if(i >= paises.length){
-              photo.src = paises[0];
-              i = 0;
+            if(i >= paises.length){ //Se o contador for igual ao tamanho
+              photo.src = paises[0]; // faz a src ver o primeiro item do vetor
+              i = 0; //reinicializa o contador.
             }
         }
         function preview(){ 
-            if(i == 0){
-                photo.src = paises[4];
-                i = 4;
+            if(i == 0){ // contador igual a 0
+                photo.src = paises[4]; // mostra o 5 item
+                i = 4; //Contador fica no 5 item
             }
                 else {
-                    i--;
+                    i--; 
                     photo.src = paises[i];
                 }
         }
