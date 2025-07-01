@@ -17,10 +17,14 @@
 
 </body>
     <script>
-          //Gerar os dois numeros aleatorios de 0 a 10 e o valor da soma deles.
+          //Gerar os dois numeros aleatorios de 0 a 9 e o valor da soma deles.
           const num1 = Math.floor(Math.random() * 10);
           const num2 = Math.floor(Math.random() * 10);
           const soma = num1 + num2;
+          // Gera um número aleatório inteiro de 0 a 9:
+          // Math.random() cria um número decimal entre 0 (inclusive) e 1 (exclusivo)
+          // Multiplicando por 10, o intervalo vira de 0 até quase 10
+          // Math.floor() arredonda para baixo, resultando em um inteiro de 0 a 9
 
            // Inseri os valores gerados nas inputs.
            document.getElementById('num1').value = num1;
